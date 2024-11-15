@@ -24,6 +24,18 @@
     let selectedPiece = null;
     let currentPlayer = 'white';
 
+// Configure shadow properties
+ctx.shadowBlur = 10;
+ctx.shadowColor = 'rgba(0, 0, 0, 0.5)';
+ctx.shadowOffsetX = 5;
+ctx.shadowOffsetY = 5;
+
+// Draw your chess pieces here
+const pieceImage = new Image();
+pieceImage.src = 'path_to_piece_image.png';
+pieceImage.onload = function() {
+  ctx.drawImage(pieceImage, x, y, width, height);
+};
     const pieces = {
       'pawn':   { 'white': '♙', 'black': '♟' },
       'rook':   { 'white': '♖', 'black': '♜' },
